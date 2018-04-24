@@ -1,5 +1,7 @@
 $(() => {
   let numList = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  let counter = 1;
+  let timerId;
 
   // 配列numListの順番をランダムに入れ替え
   for (let i = numList.length - 1; i >= 0; i--) {
@@ -7,15 +9,14 @@ $(() => {
 
     [numList[i], numList[rand]] = [numList[rand], numList[i]];
   }
-  let boxList = $('.box-list');
-  let counter = 1;
-  let timerId;
 
   numList.forEach((num) => {
     createBox(num);
   });
 
   function createBox(num) {
+    let boxList = $('.box-list');
+
     let boxItem = $('<div class="box-item">')
     boxItem.text(`${num}`);
 
