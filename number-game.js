@@ -24,8 +24,9 @@ $(() => {
       if (isStartGame) {
         if (num === counter) {
           boxItem.remove();
+
+          counter += 1;
         }
-        counter += 1;
 
         let boxLength = $('.box-item').length;
         if (!boxLength) {
